@@ -8,7 +8,9 @@
       </ul>
     </nav>
     <FadeTransition>
-      <component :is="currentTabComponent"></component>
+      <KeepAlive>
+        <component :is="currentTabComponent"></component>
+      </KeepAlive>
     </FadeTransition>
   </main>
 </template>
@@ -23,7 +25,6 @@ import GeneralSettings from '@/components/GeneralSettings.vue'
 import NotificationSettings from '@/components/NotificationSettings.vue'
 import PrivacySettings from '@/components/PrivacySettings.vue'
 import FadeTransition from '@/components/FadeTransition.vue'
-
 
 const tabs: Tab[] = [
   {
