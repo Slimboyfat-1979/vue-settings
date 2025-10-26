@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import { useSettings } from '@/composables/useSettings';
 import { useNotifications } from '@/composables/useNotifications';
-import {ref} from 'vue'
+
 
 const {general} = useSettings();
 const {addNotifications} = useNotifications();
