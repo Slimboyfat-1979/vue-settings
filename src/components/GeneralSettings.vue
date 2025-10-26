@@ -1,7 +1,7 @@
 <template>
     <div>
     <h2 class="text-2xl mb-4">General</h2>
-    <form action="" class="space-y-4 mx-auto">
+    <form action="" class="space-y-4 mx-auto" @submit.prevent="save">
         <div>
             <label for="">Username</label>
             <input type="text" v-model="general.username">
@@ -44,11 +44,15 @@
 
 <script setup lang="ts">
 import { useSettings } from '@/composables/useSettings';
+import { useNotifications } from '@/composables/useNotifications';
 import {ref} from 'vue'
 
 const {general} = useSettings();
-const thisWillAlwaysBe0 = ref(0)
-console.log(general)
+const {addNotifications} = useNotifications();
+const save = () => {
+    addNotifications('General settings were saved succesfully')
+}
+
 
 
 </script>
